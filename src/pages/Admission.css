@@ -1,0 +1,225 @@
+/* Admission Hero */
+.admission-hero {
+  padding: 100px 0 60px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, var(--bg-main) 100%);
+  text-align: center;
+}
+
+.admission-hero h1 {
+  margin-bottom: 15px;
+}
+
+.admission-hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.sub-para {
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+/* Process Timeline */
+.process-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 50px;
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 17px;
+  width: 2px;
+  background-color: var(--primary-light);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-badge {
+  position: absolute;
+  left: -50px;
+  top: 5px;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  z-index: 2;
+  box-shadow: 0 0 0 4px var(--bg-main);
+}
+
+.timeline-content {
+  text-align: left;
+  padding: 24px;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.timeline-content p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Tables */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.admission-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: var(--bg-card);
+}
+
+.admission-table th, .admission-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+.admission-table th {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.admission-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.fee-table th {
+  background-color: rgba(255, 69, 0, 0.06);
+  color: var(--secondary);
+}
+
+/* Checklist */
+.doc-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.check-box-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background-color: #ecfdf5;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.doc-notice {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px 20px;
+  background-color: #fffbeb;
+  border-color: #fef3c7;
+  text-align: left;
+}
+
+.doc-notice p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #b45309;
+  font-weight: 600;
+}
+
+.notice-icon {
+  color: #d97706;
+  flex-shrink: 0;
+}
+
+/* FAQs & Forms */
+.enquiry-card-form {
+  text-align: left;
+}
+
+.enquiry-card-form h3 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.faq-item {
+  margin-bottom: 12px;
+  cursor: pointer;
+  padding: 20px;
+  transition: var(--transition-fast);
+}
+
+.faq-item:hover {
+  border-color: var(--primary);
+}
+
+.faq-item.open {
+  border-color: var(--primary);
+  background-color: var(--bg-card);
+}
+
+.faq-question-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.faq-question-bar h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.faq-answer-panel {
+  margin-top: 15px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 15px;
+}
+
+.faq-answer-panel p {
+  font-size: 0.95rem;
+  margin: 0;
+}
