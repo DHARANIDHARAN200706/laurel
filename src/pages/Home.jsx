@@ -98,21 +98,45 @@ export default function Home({ onOpenEnquiry }) {
 
   const testimonials = [
     {
-      quote: "Laurel CBSE School provided me not just regular schooling, but the ultimate base for my competitive exams. The teachers in the NEET batch cleared my doubts even late in the evening. I managed to score 685 in NEET on my first attempt!",
-      name: "Akriti Sharma",
-      role: "Alumna, NEET Batch (Currently at AIIMS Delhi)",
+      quote: "Laurel CBSE School offers a caring and inspiring environment where children grow academically and personally with confidence. The dedicated teachers and well-rounded approach make it a wonderful place for holistic development.",
+      name: "Parent Reviewer",
+      role: "Parent of Laurel Student",
       icon: <Star className="star-icon" size={20} />
     },
     {
-      quote: "Sending our son to Laurel was the best decision. The school's focus on ATAL Lab technology coupled with JEE curriculum helped him excel in CBSE boards and get a top rank in JEE Advanced. The environment is extremely secure and positive.",
-      name: "Dr. Ramesh Nair",
-      role: "Parent of Aaditya Nair (IIT Madras, CSE)",
+      quote: "Laurel CBSE School has created a safe and encouraging space where my child enjoys learning every day. The teachers are attentive and truly care about each student’s progress",
+      name: "Harish",
+      role: "Parent of Laurel Student",
       icon: <Heart className="star-icon" size={20} />
     },
     {
-      quote: "The academic rigor at Laurel is matched by its co-curricular values. I was encouraged to participate in national science exhibits while preparing for my CUET entrance. The guidance here is top-tier and highly professional.",
-      name: "Siddharth Verma",
-      role: "Alumnus, CUET Topper (Currently at SRCC, Delhi)",
+      quote: "I am impressed with the school’s focus on both academics and values. My child has become more confident and responsible since joining Laurel CBSE School",
+      name: "Aishwarya",
+      role: "Parent of Laurel Student",
+      icon: <Star className="star-icon" size={20} />
+    },
+    {
+      quote: "The faculty at Laurel CBSE School is highly supportive and approachable. They ensure that every child receives individual attention and guidance.",
+      name: "Vignesh",
+      role: "Parent of Laurel Student",
+      icon: <Heart className="star-icon" size={20} />
+    },
+    {
+      quote: "Laurel CBSE School provides excellent opportunities for overall development through academics and extracurricular activities. My child looks forward to going to school every day.",
+      name: "Ananya",
+      role: "Parent of Laurel Student",
+      icon: <Star className="star-icon" size={20} />
+    },
+    {
+      quote: "Laurel CBSE School maintains a perfect balance between studies and extracurricular activities. My child has developed both skills and confidence here.",
+      name: "Naveen",
+      role: "Parent of Laurel Student",
+      icon: <Heart className="star-icon" size={20} />
+    },
+    {
+      quote: "The school’s positive environment and dedicated teachers make a big difference in my child’s learning journey. I’m happy to see such steady growth and enthusiasm.",
+      name: "Keerthana",
+      role: "Parent of Laurel Student",
       icon: <Star className="star-icon" size={20} />
     }
   ];
@@ -255,17 +279,17 @@ export default function Home({ onOpenEnquiry }) {
             {/* Left Block */}
             <div className="ticket-left">
               <div className="ticket-left-header">
-                <h3 className="ticket-main-stat">100%</h3>
+                <h3 className="ticket-main-stat">2453</h3>
                 <div className="ticket-stat-meta">
-                  <span className="meta-badge">live</span>
-                  <span className="meta-time">2026</span>
+                  <span className="meta-badge">passed</span>
+                  <span className="meta-time">STUDENTS</span>
                 </div>
                 {/* Red Semi-circle Rising Sun representing success/board exams */}
                 <div className="ticket-rising-sun"></div>
               </div>
               <div className="ticket-left-body">
                 <p className="ticket-desc-paragraph">
-                  Laurel CBSE School has achieved a consistent 100% board examination success rate year-on-year. Our rigorous curriculum paired with elite faculty ensures that every student achieves academic distinction.
+                  Laurel Secondary School (CBSE) – Pattukkottai is a premier co-educational institution managed by Friends Trust, offering quality education from LKG to Class 12 in Thanjavur District, Tamil Nadu.
                 </p>
               </div>
             </div>
@@ -274,16 +298,16 @@ export default function Home({ onOpenEnquiry }) {
             <div className="ticket-right">
               {/* Header */}
               <div className="ticket-right-header">
-                <span>02—10 SEP / REGULAR BATCHES</span>
+                <span>CAMPUS PERFORMANCE / QUICK STATS</span>
               </div>
               {/* Rows */}
               <div className="ticket-rows-list">
                 <div className="ticket-item-row active">
-                  <span className="item-tag red">now</span>
+                  <span className="item-tag red">staffs</span>
                   <div className="item-info">
-                    <span className="item-title">25+ EXPERT</span>
-                    <span className="item-subtitle">FACULTY MEMBERS</span>
-                    <span className="item-detail">10+ YEARS EXPERIENCE</span>
+                    <span className="item-title">678</span>
+                    <span className="item-subtitle">QUALIFIED STAFFS</span>
+                    <span className="item-detail">EXPERT ACADEMIC TEAM</span>
                   </div>
                   <div className="item-action-box" onClick={onOpenEnquiry}>
                     <Play size={12} fill="#ff4500" stroke="#ff4500" />
@@ -291,20 +315,20 @@ export default function Home({ onOpenEnquiry }) {
                 </div>
 
                 <div className="ticket-item-row">
-                  <span className="item-tag">ratio</span>
+                  <span className="item-tag">courses</span>
                   <div className="item-info">
-                    <span className="item-title">15:1 RATIO</span>
-                    <span className="item-subtitle">STUDENT-TEACHER</span>
-                    <span className="item-detail">INDIVIDUAL ATTENTION</span>
+                    <span className="item-title">52</span>
+                    <span className="item-subtitle">COURSES IN TRAILS</span>
+                    <span className="item-detail">DIVERSIFIED LEARNING PATHWAYS</span>
                   </div>
                 </div>
 
                 <div className="ticket-item-row">
-                  <span className="item-tag">admits</span>
+                  <span className="item-tag">equip</span>
                   <div className="item-info">
-                    <span className="item-title">500+ ADMITS</span>
-                    <span className="item-subtitle">IIT & MEDICAL CAREER</span>
-                    <span className="item-detail">NATIONAL ENTRANCE SECURED</span>
+                    <span className="item-title">936</span>
+                    <span className="item-subtitle">EQUIPMENTS</span>
+                    <span className="item-detail">ADVANCED LABORATORY RESOURCES</span>
                   </div>
                 </div>
               </div>
@@ -386,8 +410,18 @@ export default function Home({ onOpenEnquiry }) {
       {/* Why Choose Laurel (Design-Rules Editorial Layout) */}
       <section className="why-laurel-editorial" id="why-laurel-section">
         {/* Top Floating Typography Block */}
-        <div className="why-editorial-top">
-          <div className="editorial-floating-letters">
+        <div className="why-editorial-top" style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+          
+          <div className="why-editorial-heading-container" style={{ maxWidth: '800px' }}>
+            <h2 className="why-editorial-main-heading" style={{ fontSize: '2rem', fontWeight: '800', marginBottom: '15px', color: '#000000', textTransform: 'uppercase', letterSpacing: '0.02em' }}>
+              Why Our Schools are the Right Fit for Your Child?
+            </h2>
+            <p className="why-editorial-main-desc" style={{ fontSize: '0.9rem', color: '#555555', lineHeight: '1.6', textTransform: 'uppercase' }}>
+              Our school offers a perfect blend of academic excellence, co-curricular activities, and value-based education. We nurture confident, creative, and future-ready individuals in a safe and supportive environment.
+            </p>
+          </div>
+
+          <div className="editorial-floating-letters" style={{ display: 'none' }}>
             <span className="editorial-letter letter-w">W</span>
             <span className="editorial-letter letter-h">H</span>
             <span className="editorial-letter letter-y">Y</span>
@@ -399,16 +433,16 @@ export default function Home({ onOpenEnquiry }) {
           {/* Metadata Row */}
           <div className="editorial-meta-row">
             <div className="meta-col">
-              <span className="meta-col-title">Curriculum</span>
-              <p className="meta-col-desc">Rigorous CBSE syllabus integrated with national level competitive exam preparation.</p>
+              <span className="meta-col-title">Well Trained Professionals</span>
+              <p className="meta-col-desc">Our faculty consists of postgraduate domain experts with over 10+ years of CBSE and national competitive exam coaching experience.</p>
             </div>
             <div className="meta-col">
-              <span className="meta-col-title">Development</span>
-              <p className="meta-col-desc">Nurturing critical logic, physical fitness, moral values, and artistic expression.</p>
+              <span className="meta-col-title">Awesome Infra-Structure</span>
+              <p className="meta-col-desc">Lush green campus with well-ventilated smart classrooms, advanced audio-visual units, and multi-purpose activity fields.</p>
             </div>
             <div className="meta-col">
-              <span className="meta-col-title">Infrastructure</span>
-              <p className="meta-col-desc">Equipped scientific labs, smart-classrooms, and sports fields for interactive study.</p>
+              <span className="meta-col-title">ATAL Lab</span>
+              <p className="meta-col-desc">Equipped with NITI Aayog sponsored ATAL Tinkering Lab to promote artificial intelligence, robotics, 3D printing, and design thinking.</p>
             </div>
           </div>
         </div>
@@ -499,21 +533,21 @@ export default function Home({ onOpenEnquiry }) {
             </div>
           </div>
 
-          {/* Column 2: Highlight Column (JEE Foundation) */}
+          {/* Column 2: Highlight Column (JEE) */}
           <div className="panel-col panel-highlight-card" style={{ backgroundImage: 'url(/coaching-highlight.png)' }}>
             <div className="panel-highlight-overlay"></div>
             
             <div className="highlight-content">
               <div className="highlight-top-meta">
                 <span className="highlight-num">01</span>
-                <span className="highlight-tag">FND</span>
+                <span className="highlight-tag">ENG</span>
               </div>
               
               <div className="highlight-mid-details">
-                <span className="highlight-subtitle">CLASSES 8 - 10 / CBSE BOARDS</span>
-                <h3 className="highlight-title">JEE FOUNDATION</h3>
+                <span className="highlight-subtitle">CBSE & NATIONAL ENTRANCE</span>
+                <h3 className="highlight-title">JEE</h3>
                 <p className="highlight-desc">
-                  Strengthening mental ability, logical reasoning, and basic sciences before secondary studies.
+                  A national-level entrance exam for admission to top engineering institutes like IITs and NITs, testing Physics, Chemistry, and Mathematics.
                 </p>
               </div>
               
@@ -535,10 +569,10 @@ export default function Home({ onOpenEnquiry }) {
               </div>
               
               <div className="minimalist-mid-details">
-                <span className="minimalist-subtitle">CLASSES 11 - 12 & REPEATERS</span>
-                <h3 className="minimalist-title">NEET MEDICAL</h3>
+                <span className="minimalist-subtitle">CBSE & MEDICAL ENTRANCE</span>
+                <h3 className="minimalist-title">NEET & NEET Repeaters</h3>
                 <p className="minimalist-desc">
-                  Intensive medical entrance program with standard biology workshops, physics numericals drills, and high-frequency Mock Tests.
+                  A nationwide medical entrance exam for MBBS and related courses, assessing Physics, Chemistry, and Biology knowledge.
                 </p>
               </div>
               
@@ -548,7 +582,7 @@ export default function Home({ onOpenEnquiry }) {
             </div>
           </div>
 
-          {/* Column 4: Minimalist CUET panel */}
+          {/* Column 4: Minimalist CUED panel */}
           <div className="panel-col panel-minimalist-card">
             <div className="minimalist-content">
               <div className="minimalist-top-meta">
@@ -557,10 +591,10 @@ export default function Home({ onOpenEnquiry }) {
               </div>
               
               <div className="minimalist-mid-details">
-                <span className="minimalist-subtitle">GRADE 12 GRADUATES</span>
-                <h3 className="minimalist-title">CUET ENTRANCE</h3>
+                <span className="minimalist-subtitle">CENTRAL UNIVERSITIES ENTRANCE</span>
+                <h3 className="minimalist-title">CUED</h3>
                 <p className="minimalist-desc">
-                  Comprehensive domain-specific and general aptitude coaching targeting top Central and National Universities.
+                  A common entrance test for admission to undergraduate programs in central and participating universities across India.
                 </p>
               </div>
               
@@ -723,7 +757,6 @@ export default function Home({ onOpenEnquiry }) {
 
               {/* Floating Card 3: Ask prompt input bar */}
               <div className="floating-ask-bar">
-                <span className="ask-emoji">😊</span>
                 <input 
                   type="text" 
                   className="ask-input-field" 

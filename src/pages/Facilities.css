@@ -785,3 +785,29 @@
   margin: 0 auto 20px;
   line-height: 1.5;
 }
+
+/* Amenities Highlights Grid Responsive Styling */
+@media (max-width: 992px) {
+  .amenities-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .facilities-bullets-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+    padding: 0 20px !important;
+  }
+  
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .amenities-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

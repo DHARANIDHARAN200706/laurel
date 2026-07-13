@@ -1,42 +1,31 @@
 import React from 'react';
-import { Sun, Droplet, Leaf, Cpu, Beaker, Cloud, Layers, Settings } from 'lucide-react';
+import { Sun, Droplet, Leaf, Cpu, Beaker, Cloud, Layers, Settings, Volume2 } from 'lucide-react';
 import './Infrastructure.css';
 
 export default function Infrastructure() {
   const statsList = [
     {
-      number: '5 Acres',
+      icon: <Leaf size={24} style={{ color: 'var(--secondary)' }} />,
       label: 'Eco-Friendly Campus',
-      desc: '40% green cover, rainwater reservoirs, and a solar power grid.'
+      desc: 'Rainwater reservoirs and a solar power grid.'
     },
     {
-      number: '40+',
+      icon: <Layers size={24} style={{ color: '#3b82f6' }} />,
       label: 'Smart Rooms',
-      desc: 'Modern digital display systems with ergonomic non-fatigue seating.'
+      desc: 'Modern digital display systems with ergonomic seating.'
     },
     {
-      number: '500+',
+      icon: <Volume2 size={24} style={{ color: '#10b981' }} />,
       label: 'Seating Capacity',
-      desc: 'Auditorium multi-purpose hall fitted with Bose acoustic sound panels.'
+      desc: 'Auditorium multi-purpose hall fitted with premium acoustic sound panels.'
     },
     {
-      number: '3000+',
-      label: 'Sqm Science Labs',
-      desc: 'Engineering, scientific, and robotic ATAL testing suites.'
+      icon: <Beaker size={24} style={{ color: '#8b5cf6' }} />,
+      label: 'Science Labs',
+      desc: 'Engineering, scientific, and robotic testing suites.'
     }
   ];
 
-  const logoPartners = [
-    { name: 'CBSE' },
-    { name: 'NITI Aayog' },
-    { name: 'Fit India' },
-    { name: 'ISA Certified' },
-    { name: 'Friends Trust' },
-    { name: 'British Council' },
-    { name: 'STEM Accred.' },
-    { name: 'ISO 9001' },
-    { name: 'Green School' }
-  ];
 
   return (
     <div className="infrastructure-page animate-fade-in">
@@ -118,37 +107,17 @@ export default function Infrastructure() {
           <div className="infra-stats-grid">
             {statsList.map((stat, idx) => (
               <div key={idx} className="infra-stat-card">
-                <div className="infra-stat-number">{stat.number}</div>
-                <div className="infra-stat-label">{stat.label}</div>
-                <p className="infra-stat-desc">{stat.desc}</p>
+                <div className="infra-stat-icon" style={{ marginBottom: '16px', display: 'flex' }}>
+                  {stat.icon}
+                </div>
+                <div className="infra-stat-label" style={{ fontSize: '1.25rem', marginBottom: '8px', fontWeight: '700' }}>{stat.label}</div>
+                <p className="infra-stat-desc" style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>{stat.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trusted By Section */}
-      <section className="trusted-section">
-        <div className="container trusted-grid">
-          <div className="trusted-content">
-            <h2>Trusted by families from primary to graduation. Built to support every stage.</h2>
-            <p>
-              Our infrastructure meets CBSE board safety standards, and is continuously inspected to ensure zero hazard operations. From chemical-safe worktops to certified sports fields, every square foot is optimized for children.
-            </p>
-            <div>
-              <a href="/admissions" className="btn btn-primary">Admissions Portal</a>
-            </div>
-          </div>
-
-          <div className="trusted-logo-grid">
-            {logoPartners.map((partner, idx) => (
-              <div key={idx} className="trusted-logo-card">
-                <span className="trusted-logo-text">{partner.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Projects / Case Study Section */}
       <section className="projects-section">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Filter, X } from 'lucide-react';
+import { Filter, X, Check, Wind, Map, Bus, Coffee, Network } from 'lucide-react';
 import './Facilities.css';
 
 export default function Facilities() {
@@ -18,105 +18,78 @@ export default function Facilities() {
     };
   }, [activeFacility]);
 
+  const amenities = [
+    {
+      title: "Facilities",
+      desc: "Aircondition, Weather Control",
+      icon: <Wind size={20} color="#ff4500" />
+    },
+    {
+      title: "Infrastructure",
+      desc: "Campus Area",
+      icon: <Map size={20} color="#ff4500" />
+    },
+    {
+      title: "Transport",
+      desc: "Vehicles",
+      icon: <Bus size={20} color="#ff4500" />
+    },
+    {
+      title: "Hostel",
+      desc: "Lunch Snacks",
+      icon: <Coffee size={20} color="#ff4500" />
+    },
+    {
+      title: "Networked",
+      desc: "Communication",
+      icon: <Network size={20} color="#ff4500" />
+    }
+  ];
+
   const facilitiesList = [
     {
       id: 'classrooms',
-      title: 'Smart Classrooms',
+      title: 'Innovative Classrooms',
       subtitle: 'BenQ 4K Smartboards',
       category: 'academic',
-      categoryLabel: 'Academic Lab',
-      desc: 'All classrooms are equipped with BenQ digital interactive panels, ergonomic furniture, high-speed Wi-Fi, and complete acoustic tuning to support audio-visual learning.',
+      categoryLabel: 'Smart Classrooms',
+      desc: 'ssmart classrooms are designed to create an engaging and interactive learning environment for students. Equipped with modern teaching aids and technology, they enhance understanding and participation.These spaces support effective learning while encouraging creativity and collaboration.',
       img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80',
-      features: ['BenQ 4K Interactive Panels', 'Air-cooled environment', 'Ergonomic orthopedic seating', 'Integrated surround sound'],
+      features: ['Smart Classrooms', 'Modern teaching aids', 'Interactive learning tools', 'Technology integration'],
       type: 'accordion'
     },
     {
       id: 'science-labs',
-      title: 'Smart Science Labs',
-      subtitle: 'Physics, Chemistry & Biology',
+      title: 'Lab & Library',
+      subtitle: 'Resourceful Practical Study',
       category: 'academic',
-      categoryLabel: 'Academic Lab',
-      desc: 'Separate, spacious laboratories for physics, chemistry, and biology. Each lab houses high-precision equipment, safety hoods, and individual workspace stations.',
-      img: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80',
-      features: ['Individual workspace stations', 'Gas connection ducts', 'High-grade optical microscopes', 'Automated fire safety extractors'],
-      type: 'alerts'
-    },
-    {
-      id: 'atal-lab',
-      title: 'ATAL Tinkering Lab',
-      subtitle: 'IoT & Robotics workbench',
-      category: 'academic',
-      categoryLabel: 'STEM Lab',
-      desc: 'NITI Aayog approved tinkering lab designed to stimulate STEM. Includes robotic development kits, Arduino boards, 3D printers, and sensor drills.',
-      img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80',
-      features: ['Industrial 3D Printers', 'Robotic Assembly & MCU kits', 'Raspberry Pi computing units', 'Soldering & diagnostic stations'],
-      type: 'feed'
+      categoryLabel: 'Practical Study',
+      desc: 'well-equipped laboratories and a resourceful library provide students with opportunities for practical learning and research.The laboratories encourage hands-on experimentation, while the library nurtures reading habits and a love for knowledge.Together, they support academic excellence, curiosity, and independent learning.',
+      img: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80',
+      features: ['Well-equipped labs', 'Resourceful library', 'Hands-on experimentation', 'Self-directed research'],
+      type: 'badge'
     },
     {
       id: 'sports',
-      title: 'Sports Complex',
-      subtitle: 'Olympic Pool & Tracks',
+      title: 'Play Grounds',
+      subtitle: 'Active Outdoor Complex',
       category: 'infra',
-      categoryLabel: 'Campus Sports',
-      desc: 'Facilities for table tennis, badminton, chess, and gymnastics. Indoor training areas equipped with high-grade safety mats and professional coaching guides.',
+      categoryLabel: 'Outdoor Sports',
+      desc: 'the outdoor play areas are designed to promote physical fitness and active learning.Students engage in various sports and recreational activities that build teamwork, discipline, and confidence.These spaces support overall well-being and encourage a healthy, active lifestyle.',
       img: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80',
-      features: ['Olympic Swimming Pool', 'Badminton Courts', 'Professional gymnastics mats', 'Supervised physical trainers'],
+      features: ['Outdoor sports areas', 'Physical fitness training', 'Teamwork building games', 'Recreational play grounds'],
       type: 'avatar'
     },
     {
       id: 'computer-lab',
-      title: 'Digital Sandbox',
-      subtitle: '1:1 Chromebook Terminals',
+      title: 'Smart Learning Labs',
+      subtitle: 'Audio-Visual Multimedia',
       category: 'academic',
-      categoryLabel: 'Academic Technology',
-      desc: 'Equipped with 40 high-performance Dell desktops connected via high-speed LAN, supporting Python coding, database practice, and web design curricula.',
+      categoryLabel: 'Digital Learning',
+      desc: 'Digital classrooms are equipped with modern technology to enhance interactive and engaging learning.Audio-visual tools and multimedia resources help students understand concepts more effectively.These spaces encourage creativity, participation, and a deeper learning experience.',
       img: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=600&q=80',
-      features: ['1:1 Student-to-PC ratio', 'Python & SQL server setup', 'UPS power failover', 'High-speed gigabit fiber line'],
-      type: 'banner'
-    },
-    {
-      id: 'library',
-      title: 'Central Library',
-      subtitle: '20,000+ volumes & archives',
-      category: 'academic',
-      categoryLabel: 'Reading & Archives',
-      desc: 'A sanctuary of silence housing over 8,000+ volumes, including competitive exam resources (JEE/NEET archives), scientific journals, and digital e-book access.',
-      img: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80',
-      features: ['JEE/NEET reference libraries', 'Private reading study carrels', 'Digital Kindle terminals', 'Weekly science journal catalogs'],
-      type: 'badge'
-    },
-    {
-      id: 'medical',
-      title: 'Wellness Clinic',
-      subtitle: 'Full-time Medical Care',
-      category: 'care',
-      categoryLabel: 'Student Well-being',
-      desc: 'A dedicated medical room staffed with a registered nurse. Equipped with emergency oxygen, first-aid, and an on-call ambulance partnership.',
-      img: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80',
-      features: ['Full-time resident medical nurse', 'Oxygen cylinders & clinical beds', 'Annual comprehensive health checkups', 'Emergency local hospital logistics'],
-      type: 'button'
-    },
-    {
-      id: 'transport',
-      title: 'Secure Transport',
-      subtitle: 'GPS & RFID Live Tracking',
-      category: 'care',
-      categoryLabel: 'Student Safety',
-      desc: 'A fleet of GPS-enabled buses with speed governors, RFID tracking, and onboard helper staff covering all major city pick-up sectors.',
-      img: 'https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=600&q=80',
-      features: ['Active GPS route tracking', 'Speed governors (< 40km/h)', 'Automated RFID scans', 'Trained female bus assistants'],
-      type: 'breadcrumbs'
-    },
-    {
-      id: 'hostel',
-      title: 'Boarding Hostels',
-      subtitle: 'Separate secure wings',
-      category: 'infra',
-      categoryLabel: 'Residential Life',
-      desc: 'Safe and secure residential hostels for boys and girls. Equipped with study desks, laundry services, and supervised prep-study rooms.',
-      img: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=600&q=80',
-      features: ['Dedicated secure hosteling wings', 'Pure vegetarian nutrition mess', 'Supervised night prep hours', '24/7 resident wardens'],
-      type: 'button-group'
+      features: ['Digital technology integration', 'Audio-visual aid suites', 'Multimedia setup resources', 'Interactive student setups'],
+      type: 'feed'
     }
   ];
 
@@ -274,124 +247,169 @@ export default function Facilities() {
   return (
     <>
       <div className="facilities-page animate-fade-in">
-      {/* Page Hero */}
-      <section className="facilities-hero">
-        <div className="container">
-          <span className="badge">Campus Life</span>
-          <h1>Our Facilities & Infrastructure</h1>
-          <p>Explore the physical learning infrastructure, safety configurations, and academic resources available on our campus.</p>
-        </div>
-      </section>
+        {/* Page Hero */}
+        <section className="facilities-hero">
+          <div className="container" style={{ position: 'relative', zIndex: '10' }}>
+            <div className="hero-breadcrumb" style={{ display: 'flex', justifyContent: 'center', gap: '8px', fontSize: '0.72rem', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: '800', marginBottom: '15px' }}>
+              <span style={{ color: '#888888' }}>Facilities</span>
+              <span style={{ opacity: 0.3 }}>/</span>
+              <span style={{ color: '#ff4500' }}>HomeFacilities</span>
+            </div>
+            
+            <h1 className="editorial-section-title" style={{ fontSize: '3rem', fontWeight: '900', color: '#111111', textTransform: 'uppercase', marginBottom: '20px', letterSpacing: '-0.02em', textAlign: 'center' }}>
+              A Center of Academic Excellence
+            </h1>
+            <p style={{ fontSize: '1.05rem', color: '#555555', maxWidth: '780px', margin: '0 auto 35px', lineHeight: '1.6', textAlign: 'center' }}>
+              Our focus is on nurturing young minds with strong academic foundations, values, and life skills. We strive to create a dynamic learning environment that inspires confidence and lifelong success.
+            </p>
 
-      {/* Filter Bar */}
-      <section className="filter-bar-section">
-        <div className="container filter-container">
-          <div className="filter-label-wrap">
-            <Filter size={16} /> <span>Filter Category:</span>
-          </div>
-          <div className="filter-buttons">
-            <button 
-              className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
-              onClick={() => setFilter('all')}
-            >
-              Show All ({facilitiesList.length})
-            </button>
-            <button 
-              className={`filter-btn ${filter === 'academic' ? 'active' : ''}`}
-              onClick={() => setFilter('academic')}
-            >
-              Academic Labs & Classrooms
-            </button>
-            <button 
-              className={`filter-btn ${filter === 'infra' ? 'active' : ''}`}
-              onClick={() => setFilter('infra')}
-            >
-              Sports & Boarding
-            </button>
-            <button 
-              className={`filter-btn ${filter === 'care' ? 'active' : ''}`}
-              onClick={() => setFilter('care')}
-            >
-              Safety & Transport
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Facilities Gestalten Grid */}
-      <section className="section section-light">
-        <div className="container">
-          <div className="facilities-gestalten-grid">
-            {filteredFacilities.map((fac) => (
-              <div 
-                key={fac.id} 
-                className="gestalten-fac-card"
-                onClick={() => setActiveFacility(fac)}
-              >
-                <div className="gestalten-fac-visual-wrap">
-                  {renderFacilityVisual(fac.type)}
+            {/* Editorial bullets layout */}
+            <div className="facilities-bullets-row" style={{ display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap', marginTop: '10px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ width: '22px', height: '22px', borderRadius: '50%', backgroundColor: 'rgba(255, 69, 0, 0.1)', color: '#ff4500', display: 'flex', alignItems: 'center', justifySelf: 'center', justifyContent: 'center' }}>
+                  <Check size={12} strokeWidth={3} />
                 </div>
-                <div className="gestalten-fac-info">
-                  <h3>{fac.title}</h3>
-                  <p>{fac.subtitle}</p>
-                </div>
+                <span style={{ fontWeight: '800', fontSize: '0.85rem', color: '#111111', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Well-equipped classrooms and modern infrastructure</span>
               </div>
-            ))}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ width: '22px', height: '22px', borderRadius: '50%', backgroundColor: 'rgba(255, 69, 0, 0.1)', color: '#ff4500', display: 'flex', alignItems: 'center', justifySelf: 'center', justifyContent: 'center' }}>
+                  <Check size={12} strokeWidth={3} />
+                </div>
+                <span style={{ fontWeight: '800', fontSize: '0.85rem', color: '#111111', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Experienced and dedicated faculty</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ width: '22px', height: '22px', borderRadius: '50%', backgroundColor: 'rgba(255, 69, 0, 0.1)', color: '#ff4500', display: 'flex', alignItems: 'center', justifySelf: 'center', justifyContent: 'center' }}>
+                  <Check size={12} strokeWidth={3} />
+                </div>
+                <span style={{ fontWeight: '800', fontSize: '0.85rem', color: '#111111', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Focus on holistic development and values</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Tour CTA */}
-      <section className="tour-cta-section">
-        <div className="container tour-container card">
-          <div className="tour-content">
-            <h2>Want to Experience Laurel In-Person?</h2>
-            <p>Schedule a guided campus tour with our admissions officer. Tours run Monday through Saturday from 9:30 AM to 3:30 PM.</p>
-            <div style={{ marginTop: '25px' }}>
-              <a href="tel:+18001234567" className="btn btn-primary">Book Campus Tour Now</a>
+        {/* Core Amenities Highlights Row */}
+        <section className="amenities-highlights-section" style={{ padding: '40px 0', borderBottom: '1px solid rgba(0,0,0,0.04)', backgroundColor: '#ffffff' }}>
+          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
+            <div className="amenities-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '20px' }}>
+              {amenities.map((amenity, idx) => (
+                <div key={idx} className="amenity-card" style={{ background: '#fafafa', border: '1px solid rgba(0,0,0,0.05)', borderRadius: '8px', padding: '25px 20px', textAlign: 'center', transition: 'all 0.3s ease' }}>
+                  <div className="amenity-icon-circle" style={{ width: '42px', height: '42px', borderRadius: '50%', backgroundColor: '#ffffff', border: '1px solid rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px', boxShadow: '0 4px 10px rgba(0,0,0,0.02)' }}>
+                    {amenity.icon}
+                  </div>
+                  <h4 style={{ fontFamily: 'var(--font-heading)', fontWeight: '900', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: '#111111', margin: '0 0 6px 0' }}>{amenity.title}</h4>
+                  <p style={{ fontSize: '0.8rem', color: '#666666', margin: '0', lineHeight: '1.4' }}>{amenity.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
 
-    {/* Detail Slide Drawer Overlay */}
-    {activeFacility && createPortal(
-      <div className="fac-drawer-overlay" onClick={() => setActiveFacility(null)}>
-        <div className="fac-drawer" onClick={(e) => e.stopPropagation()}>
-          <button className="fac-drawer-close" onClick={() => setActiveFacility(null)}>
-            <X size={20} />
-          </button>
-          <div className="fac-drawer-image-wrap">
-            <img src={activeFacility.img} alt={activeFacility.title} className="fac-drawer-image" />
-            <span className="fac-drawer-category-badge">
-              {activeFacility.categoryLabel}
-            </span>
-          </div>
-          <div className="fac-drawer-content">
-            <h2>{activeFacility.title}</h2>
-            <p className="fac-drawer-desc">{activeFacility.desc}</p>
-            
-            <div className="fac-drawer-features">
-              <h3>Highlights & Standards</h3>
-              <ul>
-                {activeFacility.features.map((feat, idx) => (
-                  <li key={idx}>
-                    <span className="bullet-dot"></span>
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
+        {/* Filter Bar */}
+        <section className="filter-bar-section">
+          <div className="container filter-container">
+            <div className="filter-label-wrap">
+              <Filter size={16} /> <span>Filter Category:</span>
             </div>
-            
-            <div className="fac-drawer-cta">
-              <a href="tel:+18001234567" className="btn btn-primary">Schedule Campus Visit</a>
+            <div className="filter-buttons">
+              <button 
+                className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
+                onClick={() => setFilter('all')}
+              >
+                Show All ({facilitiesList.length})
+              </button>
+              <button 
+                className={`filter-btn ${filter === 'academic' ? 'active' : ''}`}
+                onClick={() => setFilter('academic')}
+              >
+                Academic Labs & Classrooms
+              </button>
+              <button 
+                className={`filter-btn ${filter === 'infra' ? 'active' : ''}`}
+                onClick={() => setFilter('infra')}
+              >
+                Sports & Boarding
+              </button>
             </div>
           </div>
-        </div>
-      </div>,
-      document.body
-    )}
-  </>
-);
+        </section>
+
+        {/* Facilities Gestalten Grid */}
+        <section className="section section-light">
+          <div className="container">
+            <div className="facilities-gestalten-grid">
+              {filteredFacilities.map((fac) => (
+                <div 
+                  key={fac.id} 
+                  className="gestalten-fac-card"
+                  onClick={() => setActiveFacility(fac)}
+                >
+                  <div className="gestalten-fac-visual-wrap">
+                    {renderFacilityVisual(fac.type)}
+                  </div>
+                  <div className="gestalten-fac-info">
+                    <h3>{fac.title}</h3>
+                    <p>{fac.subtitle}</p>
+                    <button className="view-more-btn" style={{ background: 'none', border: 'none', color: '#ff4500', fontWeight: '800', fontSize: '0.8rem', cursor: 'pointer', padding: '0', marginTop: '10px', display: 'inline-flex', alignItems: 'center', gap: '5px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                      View More <span>&rarr;</span>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Tour CTA */}
+        <section className="tour-cta-section">
+          <div className="container tour-container card">
+            <div className="tour-content">
+              <h2>Want to Experience Laurel In-Person?</h2>
+              <p>Schedule a guided campus tour with our admissions officer. Tours run Monday through Saturday from 9:30 AM to 3:30 PM.</p>
+              <div style={{ marginTop: '25px' }}>
+                <a href="tel:+919487918780" className="btn btn-primary" style={{ backgroundColor: '#ff4500', borderColor: '#ff4500', textDecoration: 'none', cursor: 'pointer' }}>Book Campus Tour Now</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Detail Slide Drawer Overlay */}
+      {activeFacility && createPortal(
+        <div className="fac-drawer-overlay" onClick={() => setActiveFacility(null)}>
+          <div className="fac-drawer" onClick={(e) => e.stopPropagation()}>
+            <button className="fac-drawer-close" onClick={() => setActiveFacility(null)}>
+              <X size={20} />
+            </button>
+            <div className="fac-drawer-image-wrap">
+              <img src={activeFacility.img} alt={activeFacility.title} className="fac-drawer-image" />
+              <span className="fac-drawer-category-badge">
+                {activeFacility.categoryLabel}
+              </span>
+            </div>
+            <div className="fac-drawer-content">
+              <h2>{activeFacility.title}</h2>
+              <p className="fac-drawer-desc">{activeFacility.desc}</p>
+              
+              <div className="fac-drawer-features">
+                <h3>Highlights & Standards</h3>
+                <ul>
+                  {activeFacility.features.map((feat, idx) => (
+                    <li key={idx}>
+                      <span className="bullet-dot"></span>
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="fac-drawer-cta">
+                <a href="tel:+919487918780" className="btn btn-primary" style={{ cursor: 'pointer' }}>Schedule Campus Visit</a>
+              </div>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+    </>
+  );
 }

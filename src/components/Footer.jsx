@@ -22,10 +22,18 @@ export default function Footer() {
               From learning<br />to leadership.
             </h2>
             <p className="footer-editorial-desc">
-              Empowering students to achieve academic brilliance and personal growth. Providing top-tier education integrated with premier coaching for JEE, NEET, and CUET.
+              Laurel Secondary School (CBSE) – Pattukkottai is a premier co-educational institution managed by Friends Trust, offering quality education from LKG to Class 12 in Thanjavur District, Tamil Nadu.
             </p>
             
-            <div className="footer-bottom-badge-list">
+            <div className="footer-socials" style={{ marginTop: '20px', display: 'flex', gap: '15px', fontSize: '0.85rem' }}>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Facebook</a>
+              <span style={{ opacity: 0.3 }}>|</span>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Instagram</a>
+              <span style={{ opacity: 0.3 }}>|</span>
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Youtube</a>
+            </div>
+            
+            <div className="footer-bottom-badge-list" style={{ marginTop: '25px' }}>
               <span className="badge-dot"></span>
               <span className="badge-text">Academic Excellence. Holistic Growth. Future Ready.</span>
             </div>
@@ -38,13 +46,12 @@ export default function Footer() {
             <div className="footer-editorial-col">
               <span className="col-step-number">01</span>
               <div className="col-divider-line"></div>
-              <h4 className="col-heading-title">Quick Links</h4>
+              <h4 className="col-heading-title">About School</h4>
               <ul className="col-links-list">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/admission">Admission</Link></li>
-                <li><Link to="/academics">Academics</Link></li>
-                <li><Link to="/facilities">Facilities</Link></li>
+                <li><Link to="/about">General Information</Link></li>
+                <li><Link to="/about">Who We Are</Link></li>
+                <li><Link to="/about">Our Teachers</Link></li>
+                <li><Link to="/about">School History</Link></li>
               </ul>
             </div>
 
@@ -52,12 +59,13 @@ export default function Footer() {
             <div className="footer-editorial-col">
               <span className="col-step-number">02</span>
               <div className="col-divider-line"></div>
-              <h4 className="col-heading-title">Programs</h4>
+              <h4 className="col-heading-title">Specialized Programme</h4>
               <ul className="col-links-list">
+                <li><Link to="/oil-painting-training">Oil Painting Training</Link></li>
                 <li><Link to="/academics">JEE Coaching</Link></li>
                 <li><Link to="/academics">NEET Coaching</Link></li>
                 <li><Link to="/academics">CUET Coaching</Link></li>
-                <li><Link to="/academics">Middle & High School</Link></li>
+                <li><Link to="/faq">FAQ Support</Link></li>
               </ul>
             </div>
 
@@ -78,19 +86,22 @@ export default function Footer() {
             <div className="footer-editorial-col">
               <span className="col-step-number">04</span>
               <div className="col-divider-line"></div>
-              <h4 className="col-heading-title">Connect</h4>
+              <h4 className="col-heading-title">Keep In Touch</h4>
+              <p style={{ fontSize: '0.8rem', opacity: 0.7, marginBottom: '12px', lineHeight: '1.4' }}>
+                Our school is committed to providing quality CBSE education and integrated competitive exam coaching.
+              </p>
               <ul className="col-links-list col-contact-list">
                 <li>
-                  <MapPin size={12} />
-                  <span>12, Academic Ave, Laurel Hills</span>
+                  <MapPin size={12} style={{ flexShrink: 0 }} />
+                  <span>Adhirampattinam Main Road, Pallikondan, Pattukkottai – 614602, Thanjavur District, Tamil Nadu</span>
                 </li>
                 <li>
-                  <Phone size={12} />
-                  <a href="tel:+18001234567">+1 (800) 123-4567</a>
+                  <Phone size={12} style={{ flexShrink: 0 }} />
+                  <a href="tel:+919487918780">+91 9487918780</a>
                 </li>
                 <li>
-                  <Mail size={12} />
-                  <a href="mailto:admissions@laurelschool.edu">admissions@laurelschool.edu</a>
+                  <Mail size={12} style={{ flexShrink: 0 }} />
+                  <a href="mailto:info@laurelcbse.in">info@laurelcbse.in</a>
                 </li>
               </ul>
             </div>

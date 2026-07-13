@@ -15,6 +15,8 @@ import Facilities from './pages/Facilities';
 import Gallery from './pages/Gallery';
 import Infrastructure from './pages/Infrastructure';
 import Contact from './pages/Contact';
+import Faq from './pages/Faq';
+import OilPaintingTraining from './pages/OilPaintingTraining';
 
 // Scroll to top helper on navigation changes
 function ScrollToTop() {
@@ -50,6 +52,8 @@ function AppContent({ isEnquiryOpen, handleOpenEnquiry, handleCloseEnquiry }) {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/infrastructure" element={<Infrastructure />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/oil-painting-training" element={<OilPaintingTraining />} />
         </Routes>
       </main>
 

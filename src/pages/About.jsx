@@ -11,72 +11,72 @@ export default function About() {
 
   const pillars = [
     {
-      title: 'Our Vision',
-      subtitle: 'THE FOUNDATIONAL COMPASS',
-      quote: 'To become a globally recognized center of learning that produces intellectually sound, ethically strong, and socially responsible future citizens.',
-      desc: 'Our vision drives every decision at Laurel. We seek to foster a learning environment that does not merely emphasize academic marks, but focuses on nurturing critical thinkers, global leaders, and responsible community members who can navigate the complexities of the future with character and empathy.',
-      coverColor: '#ff4500',
-      labelNumber: 'VISION',
-      author: 'LAUREL CBSE',
-      details: {
-        focus: 'Value Education',
-        scope: 'Global Citizenship',
-        pillars: 'Intellectual, Ethical, Social',
-        standard: 'CBSE Curriculum',
-        method: 'Integrated Coaching',
-        charter: 'Empowerment'
-      },
-      leader: {
-        name: 'Dr. Malini Iyer',
-        role: 'Principal, Laurel CBSE',
-        avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80',
-        quote: '"Education is not merely the learning of facts, but the training of the mind to think and build strong character."'
-      }
-    },
-    {
-      title: 'Our Legacy',
-      subtitle: 'A JOURNEY OF EXCELLENCE',
-      quote: 'Established in 2012, expanding from 150 primary students to a premium K-12 campus featuring state-of-the-art ATAL engineering laboratories.',
-      desc: 'Over the last decade, Laurel has evolved into a premier educational hub. Starting humble with 150 primary students, we have expanded our capacity to cater to over 1200+ active scholars, integrating advanced facilities such as NITI Aayog approved ATAL Tinkering Labs and national entrance coaching directly within the core schedule.',
+      title: 'JEE',
+      subtitle: 'ENGINEERING PREPARATION',
+      quote: 'A national-level entrance exam for admission to top engineering institutes like IITs and NITs, testing Physics, Chemistry, and Mathematics.',
+      desc: 'Our rigorous engineering coaching program preparing students for IITs, NITs, and other premium institutes worldwide.',
       coverColor: '#1d4ed8',
-      labelNumber: 'LEGACY',
-      author: 'ESTD 2012',
+      labelNumber: 'JEE',
+      author: 'LAUREL CORE',
       details: {
-        focus: '2012 Academic Year',
-        scope: '1200+ Active Scholars',
-        pillars: 'Premium K-12 Infrastructure',
-        standard: 'ATAL Tinkering / Science Labs',
-        method: '8x Scaling in 10 Years',
-        charter: 'Pioneering Integrated Prep'
+        focus: 'Physics, Chemistry, Math',
+        scope: 'IITs / NITs Admission',
+        pillars: 'Problem Solving, Concepts',
+        standard: 'National Level Exam',
+        method: 'Mock Tests & DPPs',
+        charter: 'Engineering Stream'
       },
       leader: {
-        name: 'Shri. K. Chandran',
-        role: 'Chairman, Friends Trust',
-        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80',
-        quote: '"Building a state-of-the-art campus is just the container; the real work lies in shaping the future of our youth."'
+        name: 'Mr. Vivek Kaushik',
+        role: 'Head of Physics & JEE Coach',
+        avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&h=200&q=80',
+        quote: '"Our integrated engineering preparatory modules are designed to bridge high school principles with competitive complexity."'
       }
     },
     {
-      title: 'Friends Trust',
-      subtitle: 'PHILANTHROPY & GOVERNANCE',
-      quote: 'A registered charitable trust providing merit scholarships, high-tech campus infrastructure expansion, and student-centric administration.',
-      desc: 'Friends Trust guides Laurel with a student-first philosophy. The trust ensures that quality education is accessible by funding annual merit scholarships, subsidizing educational tours, upgrading technological tools, and keeping administrative practices responsive and transparent.',
-      coverColor: '#059669',
-      labelNumber: 'TRUST',
-      author: 'CHARITABLE',
+      title: 'NEET',
+      subtitle: 'MEDICAL PREPARATION',
+      quote: 'A nationwide medical entrance exam for MBBS and related courses, assessing Physics, Chemistry, and Biology knowledge.',
+      desc: 'Dedicated training with experienced mentors covering Physics, Chemistry, and Biology core disciplines to secure high rankings.',
+      coverColor: '#ff4500',
+      labelNumber: 'NEET',
+      author: 'LAUREL CORE',
       details: {
-        focus: 'Registered Charitable Trust',
-        scope: 'Merit Scholarships & Aid',
-        pillars: 'Student-Centric Admin',
-        standard: 'High-Tech Labs Expansion',
-        method: 'Community Driven',
-        charter: 'Eminent Academicians'
+        focus: 'Physics, Chemistry, Biology',
+        scope: 'MBBS / BDS Admissions',
+        pillars: 'NCERT Focus, Speed',
+        standard: 'National Level Medical',
+        method: 'Doubt Solver Batches',
+        charter: 'Medical Stream'
+      },
+      leader: {
+        name: 'Dr. Sneha Pillai',
+        role: 'Head of Biology & NEET Coach',
+        avatar: 'https://images.unsplash.com/photo-1580894732444-8fecef2271ff?auto=format&fit=crop&w=200&h=200&q=80',
+        quote: '"Medicine is a calling. We teach our students to master biology core concepts to succeed in both boards and NEET entrance exams."'
+      }
+    },
+    {
+      title: 'CUED',
+      subtitle: 'CENTRAL UNIVERSITIES ENTRANCE',
+      quote: 'A common entrance test for admission to undergraduate programs in central and participating universities across India.',
+      desc: 'Domain-specific training aligned with CBSE curriculum to ease central college entrance tests for all graduates.',
+      coverColor: '#059669',
+      labelNumber: 'CUED',
+      author: 'LAUREL CORE',
+      details: {
+        focus: 'Aptitude & Domains',
+        scope: 'Central Universities',
+        pillars: 'General Test, Languages',
+        standard: 'Undergraduate Entrance',
+        method: 'Computer Based Prep',
+        charter: 'Arts, Science & Commerce'
       },
       leader: {
         name: 'Mrs. Sila Sen',
-        role: 'Trustee & Board Director',
+        role: 'Head of Chemistry',
         avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200&q=80',
-        quote: '"True philanthropy is about building bridges to opportunity. Every scholarship we grant changes a life."'
+        quote: '"CUED prepares students for a vast range of top-tier universities, unlocking multidisciplinary educational tracks."'
       }
     }
   ];
@@ -179,129 +179,9 @@ export default function About() {
         </div>
       </section>
 
-      {/* 2. Overview Highlights (Gestalten Book Listing Layout) */}
-      <section id="overview-highlights" className="section-overview-highlights">
-        <div className="container">
-          
-          <div className="section-header" style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span className="badge">FOUNDATIONS</span>
-            <h2 className="editorial-section-title" style={{ justifyContent: 'center', display: 'flex' }}>The Core Pillars of Laurel</h2>
-            <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--text-secondary)' }}>
-              Explore the educational philosophies, growth historical milestones, and governance systems driving our institution.
-            </p>
-          </div>
 
-          <div className="gestalten-book-listing">
-            
-            {/* Main Panel Content */}
-            <div className="gestalten-book-main" key={activePillarIdx}>
-              
-              {/* Left Side: Large Book Cover on Circular Backdrop */}
-              <div className="gestalten-cover-container">
-                <div className="gestalten-backdrop-circle"></div>
-                
-                {/* Dynamic CSS Styled Book Cover */}
-                <div className="gestalten-book-cover" style={{ backgroundColor: pillars[activePillarIdx].coverColor }}>
-                  <div className="book-spine"></div>
-                  <div className="book-label">
-                    <h4 className="book-label-title">{pillars[activePillarIdx].title}</h4>
-                    <div className="book-label-divider"></div>
-                    <p className="book-label-number">{pillars[activePillarIdx].labelNumber}</p>
-                    <p className="book-label-author">{pillars[activePillarIdx].author}</p>
-                  </div>
-                </div>
-                
-                <span className="cover-preview-lbl">CLICK SIDEBAR TO EXPLORE</span>
-              </div>
 
-              {/* Center Side: Editorial details */}
-              <div className="gestalten-details-container">
-                <h1 className="gestalten-book-title">{pillars[activePillarIdx].title}</h1>
-                <h3 className="gestalten-book-author">by {pillars[activePillarIdx].author}</h3>
-
-                <p className="gestalten-book-quote">"{pillars[activePillarIdx].quote}"</p>
-                <p className="gestalten-book-desc">{pillars[activePillarIdx].desc}</p>
-
-                {/* Metadata Table Grid */}
-                <div className="gestalten-metadata-grid">
-                  <div className="metadata-item">
-                    <span className="metadata-label">Focus Area</span>
-                    <span className="metadata-value">{pillars[activePillarIdx].details.focus}</span>
-                  </div>
-                  <div className="metadata-item">
-                    <span className="metadata-label">Academic System</span>
-                    <span className="metadata-value">{pillars[activePillarIdx].details.standard}</span>
-                  </div>
-                  <div className="metadata-item">
-                    <span className="metadata-label">Scope</span>
-                    <span className="metadata-value">{pillars[activePillarIdx].details.scope}</span>
-                  </div>
-                  <div className="metadata-item">
-                    <span className="metadata-label">Methodology</span>
-                    <span className="metadata-value">{pillars[activePillarIdx].details.method}</span>
-                  </div>
-                  <div className="metadata-item">
-                    <span className="metadata-label">Foundations</span>
-                    <span className="metadata-value">{pillars[activePillarIdx].details.pillars}</span>
-                  </div>
-                  <div className="metadata-item">
-                    <span className="metadata-label">Charter</span>
-                    <span className="metadata-value">{pillars[activePillarIdx].details.charter}</span>
-                  </div>
-                </div>
-
-                {/* Review Block (Leadership Endorsement) */}
-                <div className="gestalten-review-block">
-                  <div className="reviewer-header">
-                    <img 
-                      src={pillars[activePillarIdx].leader.avatar} 
-                      alt={pillars[activePillarIdx].leader.name} 
-                      className="reviewer-avatar" 
-                    />
-                    <div className="reviewer-info">
-                      <span className="reviewed-by-lbl">Endorsed By</span>
-                      <span className="reviewer-name">{pillars[activePillarIdx].leader.name}</span>
-                      <span className="reviewer-role">{pillars[activePillarIdx].leader.role}</span>
-                    </div>
-                  </div>
-                  <p className="reviewer-text">
-                    {pillars[activePillarIdx].leader.quote}
-                  </p>
-                </div>
-
-              </div>
-
-            </div>
-
-            {/* Right Side: Scrollable Sidebar list of book covers */}
-            <div className="gestalten-sidebar">
-              <span className="sidebar-vertical-title">CORE PILLARS</span>
-              <div className="sidebar-books-list">
-                {pillars.map((p, i) => (
-                  <div 
-                    key={i} 
-                    className={`sidebar-book-item ${activePillarIdx === i ? 'active' : ''}`}
-                    onClick={() => setActivePillarIdx(i)}
-                  >
-                    {/* Thumbnail Book Cover */}
-                    <div className="sidebar-cover-thumb" style={{ backgroundColor: p.coverColor }}>
-                      <div className="thumb-spine"></div>
-                      <div className="thumb-label">
-                        <span className="thumb-label-title">{p.title}</span>
-                      </div>
-                    </div>
-                    <span className="sidebar-book-title-text">{p.title}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* 3. Asymmetric Image & Principal's Message (Organic Blob Layout from image 1) */}
+      {/* 3. Asymmetric Image & About Us (Organic Blob Layout) */}
       <section className="section-principal-message">
         <div className="container principal-message-grid">
           
@@ -310,7 +190,7 @@ export default function About() {
             <div className="principal-organic-blob">
               <img 
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" 
-                alt="Principal of Laurel School" 
+                alt="About Laurel CBSE School" 
                 className="principal-blob-img"
               />
             </div>
@@ -320,22 +200,35 @@ export default function About() {
 
           {/* Text content details */}
           <div className="principal-message-text">
-            <h2 className="editorial-section-title">Design with us, Develop Anything.</h2>
+            <h2 className="editorial-section-title">About Us</h2>
             
             <p className="principal-text-paragraph">
-              Laurel CBSE School was established with a singular vision: to create an institution that offers world-class CBSE education alongside rigorous, integrated national coaching. We understand the dilemma parents face in managing school hours and external tuitions; we solve it by bringing top coaching minds for JEE, NEET, and CUET directly under our roof.
+              Laurel CBSE School is committed to providing quality education that nurtures academic excellence, strong values, and holistic development. With a student-centered approach, experienced faculty, and a well-structured curriculum, we aim to empower young minds to become confident, responsible, and future-ready individuals.
             </p>
-            
-            <p className="principal-text-paragraph">
-              "Education is not merely the learning of facts, but the training of the mind to think."
-            </p>
-
-            <div className="principal-author-block">
-              <div className="principal-signature-text">Dr. Malini Iyer</div>
-              <span className="principal-author-role">Principal, Laurel CBSE School</span>
-            </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* Video CTA Section */}
+      <section className="about-video-cta-section" style={{ padding: '80px 0', backgroundColor: '#fafafa', borderBottom: '1px solid rgba(0, 0, 0, 0.04)' }}>
+        <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 20px', textAlign: 'center' }}>
+          <span className="badge" style={{ display: 'inline-block', marginBottom: '15px' }}>CAMPUS LIFE</span>
+          <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', fontWeight: '800', marginBottom: '20px', color: '#000000', lineHeight: '1.3', textTransform: 'uppercase' }}>
+            We offer a High Quality Blend of Co-Curricular Activities, Sports and Academics.
+          </h2>
+          <p style={{ fontSize: '1rem', color: '#555555', marginBottom: '35px', lineHeight: '1.6', maxWidth: '750px', margin: '0 auto 35px' }}>
+            We offer a high-quality blend of academics, sports, and co-curricular activities. Our approach ensures holistic development and prepares students for future success.
+          </p>
+          
+          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button className="hero-pill-btn" onClick={() => window.open('https://youtube.com', '_blank')} style={{ cursor: 'pointer' }}>
+              Play Video
+            </button>
+            <a href="/contact" className="hero-pill-btn" style={{ backgroundColor: '#ff4500', boxShadow: '0 10px 25px rgba(255, 69, 0, 0.15)', cursor: 'pointer', textDecoration: 'none' }}>
+              Join Today
+            </a>
+          </div>
         </div>
       </section>
 
@@ -348,17 +241,17 @@ export default function About() {
             <div className="stat-icon-circle">
               <Target size={18} />
             </div>
-            <span className="stat-label">Active Scholars</span>
-            <span className="stat-number">1200+</span>
+            <span className="stat-label">Student Passed</span>
+            <span className="stat-number">2453</span>
           </div>
 
           {/* Stat 2 */}
           <div className="stat-counter-item">
             <div className="stat-icon-circle">
-              <Eye size={18} />
+              <Users size={18} />
             </div>
-            <span className="stat-label">Expert Educators</span>
-            <span className="stat-number">25+</span>
+            <span className="stat-label">Qualified Staffs</span>
+            <span className="stat-number">678</span>
           </div>
 
           {/* Stat 3 */}
@@ -366,8 +259,8 @@ export default function About() {
             <div className="stat-icon-circle">
               <Award size={18} />
             </div>
-            <span className="stat-label">Board Success</span>
-            <span className="stat-number">100%</span>
+            <span className="stat-label">Equipments</span>
+            <span className="stat-number">936</span>
           </div>
 
         </div>
