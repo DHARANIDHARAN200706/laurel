@@ -30,6 +30,8 @@ export default function Chatbot() {
 
   useEffect(() => {
     setIsOfficeOpen(checkOfficeHours());
+    console.log('Chatbot Init - Groq Key Length:', GROQ_API_KEY ? GROQ_API_KEY.length : 0);
+    console.log('Chatbot Init - Groq Key Prefix:', GROQ_API_KEY ? GROQ_API_KEY.substring(0, 10) : 'none');
     
     // Set initial greeting
     const greetUser = () => {
