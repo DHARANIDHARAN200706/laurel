@@ -16,9 +16,35 @@ import './Header.css';
 export default function Header({ onOpenEnquiry }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [user, setUser] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
+
+  const checkUser = () => {
+    const storedUser = localStorage.getItem('laurelUser');
+    if (storedUser) {
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch (e) {
+        setUser(null);
+      }
+    } else {
+      setUser(null);
+    }
+  };
+
+  useEffect(() => {
+    checkUser();
+    window.addEventListener('authChange', checkUser);
+    return () => window.removeEventListener('authChange', checkUser);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('laurelUser');
+    checkUser();
+    navigate('/');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -108,8 +134,47 @@ export default function Header({ onOpenEnquiry }) {
         </nav>
 
         {/* Right Side: Desktop triggers Enquiry modal; Mobile toggles drawer */}
-        <div className="hero-top-right">
+        <div className="hero-top-right" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           
+          {user ? (
+            <div className="header-user-pill desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '0.85rem', fontWeight: '700', color: '#111111' }}>
+                Hi, {user.name.split(' ')[0]}
+              </span>
+              <button 
+                onClick={handleLogout}
+                className="header-logout-btn"
+                style={{ 
+                  background: 'transparent', 
+                  border: '1px solid rgba(0,0,0,0.15)',
+                  borderRadius: '20px',
+                  padding: '6px 12px',
+                  fontSize: '0.75rem',
+                  fontWeight: '700',
+                  color: '#ef4444',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s'
+                }}
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link 
+              to="/login" 
+              className="header-login-link desktop-only"
+              style={{ 
+                fontSize: '0.85rem', 
+                fontWeight: '700', 
+                color: '#111111', 
+                textDecoration: 'none',
+                marginRight: '5px'
+              }}
+            >
+              Login
+            </Link>
+          )}
+
           {/* Desktop Only: Chic minimal Action Button */}
           <button 
             onClick={onOpenEnquiry} 
@@ -135,15 +200,53 @@ export default function Header({ onOpenEnquiry }) {
       <div className={`mobile-nav-drawer ${isOpen ? 'open' : ''}`}>
         <div className="mobile-drawer-inner">
 
-          <button 
-            className="mobile-drawer-cta"
-            onClick={() => {
-              setIsOpen(false);
-              onOpenEnquiry();
-            }}
-          >
-            Apply Now
-          </button>
+          <div style={{ display: 'flex', gap: '10px', width: '100%', padding: '0 20px', boxSizing: 'border-box', marginBottom: '20px' }}>
+            <button 
+              className="mobile-drawer-cta"
+              onClick={() => {
+                setIsOpen(false);
+                onOpenEnquiry();
+              }}
+              style={{ flex: 1, margin: 0 }}
+            >
+              Apply Now
+            </button>
+
+            {user ? (
+              <button 
+                className="mobile-drawer-cta"
+                onClick={() => {
+                  setIsOpen(false);
+                  handleLogout();
+                }}
+                style={{ 
+                  flex: 1, 
+                  backgroundColor: 'transparent', 
+                  border: '1px solid #ef4444',
+                  color: '#ef4444',
+                  margin: 0
+                }}
+              >
+                Logout
+              </button>
+            ) : (
+              <button 
+                className="mobile-drawer-cta"
+                onClick={() => {
+                  setIsOpen(false);
+                  navigate('/login');
+                }}
+                style={{ 
+                  flex: 1, 
+                  backgroundColor: '#111111',
+                  color: '#ffffff',
+                  margin: 0
+                }}
+              >
+                Login
+              </button>
+            )}
+          </div>
 
           {/* 3D-stacked card deck container */}
           <div 

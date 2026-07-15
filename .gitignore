@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Project-specific ignored files
+.env
+download_test.js
+test_downloaded.jpg
+

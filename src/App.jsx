@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 
 // Layout Components
 import Header from './components/Header';
 import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
+import Chatbot from './components/Chatbot';
 
 // Pages
 import Home from './pages/Home';
@@ -17,6 +18,8 @@ import Infrastructure from './pages/Infrastructure';
 import Contact from './pages/Contact';
 import Faq from './pages/Faq';
 import OilPaintingTraining from './pages/OilPaintingTraining';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 // Scroll to top helper on navigation changes
 function ScrollToTop() {
@@ -29,9 +32,23 @@ function ScrollToTop() {
   return null;
 }
 
-function AppContent({ isEnquiryOpen, handleOpenEnquiry, handleCloseEnquiry }) {
+function AppContent() {
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
+
+  const handleOpenEnquiry = () => {
+    navigate('/contact');
+    setTimeout(() => {
+      const element = document.getElementById('contact-form');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 100);
+  };
+
+  const handleCloseEnquiry = () => setIsEnquiryOpen(false);
 
   return (
     <>
@@ -54,6 +71,8 @@ function AppContent({ isEnquiryOpen, handleOpenEnquiry, handleCloseEnquiry }) {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/oil-painting-training" element={<OilPaintingTraining />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </main>
 
@@ -62,24 +81,60 @@ function AppContent({ isEnquiryOpen, handleOpenEnquiry, handleCloseEnquiry }) {
 
       {/* Admissions Enquiry Popup Form Modal */}
       <EnquiryModal isOpen={isEnquiryOpen} onClose={handleCloseEnquiry} />
+
+      {/* Floating AI Chatbot Support Widget */}
+      <Chatbot />
     </>
   );
 }
 
 export default function App() {
-  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [fade, setFade] = useState(false);
 
-  const handleOpenEnquiry = () => setIsEnquiryOpen(true);
-  const handleCloseEnquiry = () => setIsEnquiryOpen(false);
+  useEffect(() => {
+    // Begin fade-out sequence after the progress bar animation completes (2.2s)
+    const fadeTimeout = setTimeout(() => {
+      setFade(true);
+    }, 2200);
+
+    // Completely unmount the preloader after the fade transition completes (3.0s total)
+    const loadTimeout = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => {
+      clearTimeout(fadeTimeout);
+      clearTimeout(loadTimeout);
+    };
+  }, []);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <AppContent 
-        isEnquiryOpen={isEnquiryOpen}
-        handleOpenEnquiry={handleOpenEnquiry}
-        handleCloseEnquiry={handleCloseEnquiry}
-      />
-    </Router>
+    <>
+      {loading && (
+        <div className={`preloader-overlay ${fade ? 'fade-out' : ''}`}>
+          <div className="preloader-perspective-box">
+            <div className="preloader-orbit-ring"></div>
+            <img 
+              src="/loglaurel.png" 
+              alt="Laurel CBSE School" 
+              className="preloader-3d-logo"
+              onError={(e) => {
+                e.target.src = "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=120&h=120&q=80";
+              }}
+            />
+          </div>
+          <h1 className="preloader-brand-title">Laurel School</h1>
+          <p className="preloader-brand-subtitle">Nurturing Minds / Shaping Leaders</p>
+          <div className="preloader-progress-track">
+            <div className="preloader-progress-bar"></div>
+          </div>
+        </div>
+      )}
+      <Router>
+        <ScrollToTop />
+        <AppContent />
+      </Router>
+    </>
   );
 }

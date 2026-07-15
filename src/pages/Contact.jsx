@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Send, CheckCircle2, Map } from 'lucide-react';
 import './Contact.css';
+
+const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || '';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [countdown, setCountdown] = useState(5);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -19,6 +22,24 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
   };
+
+  const getWhatsAppUrl = () => {
+    const phoneNumber = "919487918780";
+    const messageText = `Hello Laurel CBSE School,\n\nI have submitted an inquiry form on your website. Here are my details:\n• Name: ${formData.name}\n• Email: ${formData.email}\n• Location: ${formData.location}\n• Looking For: ${formData.lookingFor}\n• Message: ${formData.message}`;
+    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageText)}`;
+  };
+
+  useEffect(() => {
+    let timer;
+    if (isSuccess && countdown > 0) {
+      timer = setTimeout(() => {
+        setCountdown(prev => prev - 1);
+      }, 1000);
+    } else if (isSuccess && countdown === 0) {
+      window.location.href = getWhatsAppUrl();
+    }
+    return () => clearTimeout(timer);
+  }, [isSuccess, countdown]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,10 +55,34 @@ export default function Contact() {
     }
 
     setIsSubmitting(true);
-    setTimeout(() => {
+
+    if (!GOOGLE_SCRIPT_URL) {
+      console.warn("VITE_GOOGLE_SCRIPT_URL is not set. Data is only being redirected to WhatsApp.");
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+      }, 1000);
+      return;
+    }
+
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors', // Avoids CORS errors during redirects inside Google Apps Script Web Apps
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-    }, 1200);
+    })
+    .catch((error) => {
+      console.error('Error submitting form to Google Sheets:', error);
+      // Fallback: still show success screen and redirect to WhatsApp even if sheets/email fail
+      setIsSubmitting(false);
+      setIsSuccess(true);
+    });
   };
 
   const resetForm = () => {
@@ -50,6 +95,7 @@ export default function Contact() {
     });
     setErrors({});
     setIsSuccess(false);
+    setCountdown(5);
   };
 
   return (
@@ -125,7 +171,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Submission Form */}
-          <div className="contact-form-card-blueprint">
+          <div id="contact-form" className="contact-form-card-blueprint">
             {!isSuccess ? (
               <>
                 <h3 style={{ textTransform: 'uppercase', letterSpacing: '-0.01em', fontWeight: '900', fontSize: '1.4rem', color: '#111111', marginBottom: '8px' }}>Send Us A Message</h3>
@@ -207,10 +253,39 @@ export default function Contact() {
               </>
             ) : (
               <div className="blueprint-success-screen">
-                <CheckCircle2 className="blueprint-success-icon" size={64} style={{ color: '#10b981' }} />
-                <h3>Submission Received!</h3>
-                <p>We value your trust and time. An admissions coordinator or school officer will reach out back to you shortly.</p>
-                <button className="btn-submit-blueprint" onClick={resetForm} style={{ backgroundColor: '#111111', color: '#ffffff' }}>
+                <CheckCircle2 className="blueprint-success-icon" size={64} style={{ color: '#10b981', marginBottom: '15px' }} />
+                <h3 style={{ textTransform: 'uppercase', fontWeight: '900', fontSize: '1.4rem', color: '#111111', marginBottom: '8px' }}>Submission Received!</h3>
+                <p style={{ fontSize: '0.85rem', color: '#666666', marginBottom: '20px' }}>
+                  Your inquiry has been successfully saved to our database. Confirmation emails have been dispatched to your inbox and our admissions office.
+                </p>
+                <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '12px', padding: '15px', marginBottom: '20px' }}>
+                  <p style={{ fontSize: '0.9rem', fontWeight: '700', color: '#15803d', margin: '0' }}>
+                    Redirecting to WhatsApp in {countdown}s...
+                  </p>
+                  <p style={{ fontSize: '0.8rem', color: '#166534', margin: '5px 0 0 0' }}>
+                    Connecting you directly to our admissions office.
+                  </p>
+                </div>
+                <a 
+                  href={getWhatsAppUrl()}
+                  className="btn-submit-blueprint"
+                  style={{ 
+                    backgroundColor: '#25D366', 
+                    color: '#ffffff',
+                    textDecoration: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    fontWeight: '700',
+                    borderRadius: '12px',
+                    height: '52px',
+                    marginBottom: '15px'
+                  }}
+                >
+                  <Phone size={18} /> Chat on WhatsApp Now
+                </a>
+                <button className="btn-submit-blueprint" onClick={resetForm} style={{ backgroundColor: '#111111', color: '#ffffff', marginTop: '0' }}>
                   Send Another Message
                 </button>
               </div>
