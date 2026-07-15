@@ -123,6 +123,15 @@ export default function Chatbot() {
 
       const data = await response.json();
       
+      if (response.status === 401 || (data.error && data.error.code === 'invalid_api_key')) {
+        setMessages(prev => [...prev, {
+          role: 'assistant',
+          content: "I apologize, but the AI Chatbot's API key is invalid or has expired. Please check your VITE_GROQ_API_KEY configuration in Vercel or your local environment.",
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        }]);
+        return;
+      }
+      
       if (data.choices && data.choices[0]) {
         const assistantResponse = data.choices[0].message.content;
         setMessages(prev => [...prev, {
@@ -131,7 +140,7 @@ export default function Chatbot() {
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         }]);
       } else {
-        throw new Error("Invalid completion response");
+        throw new Error(data.error?.message || "Invalid completion response");
       }
     } catch (err) {
       console.error("Direct Groq API request failed:", err);

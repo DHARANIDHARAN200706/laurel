@@ -26,6 +26,8 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    console.log('System integration URL:', GOOGLE_SCRIPT_URL);
+
 
     // Field check
     if (!formData.name.trim() || !formData.email.trim() || !formData.password.trim() || !formData.confirmPassword.trim()) {
