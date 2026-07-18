@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from
 import Header from './components/Header';
 import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
-import Chatbot from './components/Chatbot';
 
 // Pages
 import Home from './pages/Home';
@@ -81,9 +80,6 @@ function AppContent() {
 
       {/* Admissions Enquiry Popup Form Modal */}
       <EnquiryModal isOpen={isEnquiryOpen} onClose={handleCloseEnquiry} />
-
-      {/* Floating AI Chatbot Support Widget */}
-      <Chatbot />
     </>
   );
 }

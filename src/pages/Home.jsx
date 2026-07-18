@@ -222,16 +222,7 @@ export default function Home({ onOpenEnquiry }) {
 
           {/* Right Block */}
           <div className="hero-premium-right">
-            <div 
-              className="right-text-block"
-              style={{ transform: `translateY(${scrollY * 0.06}px)` }}
-            >
-              <span className="section-subtitle">LAUREL ACADEMY</span>
-              <h2 className="premium-hero-heading">CRAFTED EDUCATION & COGNITIVE MINDSET</h2>
-              <p className="premium-hero-desc">
-                INTEGRATED CBSE CURRICULUM WITH TOP-TIER NATIONAL ENTRANCE COACHING FOR JEE, NEET & CUET. SHAPING SECURE FUTURES.
-              </p>
-            </div>
+
 
             {/* Vertical orientation text */}
             <div className="vertical-year-indicator">
