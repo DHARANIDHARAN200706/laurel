@@ -27,4 +27,4 @@ dist-ssr
 .env
 download_test.js
 test_downloaded.jpg
-
+reference/

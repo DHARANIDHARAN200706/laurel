@@ -283,7 +283,6 @@ export default function About() {
               <div 
                 key={i} 
                 className="ref-style-card"
-                onClick={() => setActiveModalMember({ ...member, type: 'BOARD MEMBER' })}
               >
                 
                 {/* Grayscale hoverable portrait background */}
@@ -319,7 +318,11 @@ export default function About() {
                     <h3 className="ref-card-name">{member.name}</h3>
                     <p className="ref-card-role">{member.role}</p>
                   </div>
-                  <div className="ref-card-action-circle">
+                  <div 
+                    className="ref-card-action-circle"
+                    onClick={() => setActiveModalMember({ ...member, type: 'BOARD MEMBER' })}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <ArrowRight size={16} />
                   </div>
                 </div>
@@ -348,7 +351,6 @@ export default function About() {
               <div 
                 key={i} 
                 className="ref-style-card"
-                onClick={() => setActiveModalMember({ ...teacher, type: 'EDUCATOR' })}
               >
                 
                 {/* Grayscale hoverable portrait background */}
@@ -384,7 +386,11 @@ export default function About() {
                     <h3 className="ref-card-name">{teacher.name}</h3>
                     <p className="ref-card-role">{teacher.role}</p>
                   </div>
-                  <div className="ref-card-action-circle">
+                  <div 
+                    className="ref-card-action-circle"
+                    onClick={() => setActiveModalMember({ ...teacher, type: 'EDUCATOR' })}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <ArrowRight size={16} />
                   </div>
                 </div>

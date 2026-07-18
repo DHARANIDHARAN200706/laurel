@@ -424,13 +424,10 @@
 /* Team Ref-Style Expandable Accordion Slider (Ref Image 5 Sequence) */
 .ref-accordion-container {
   display: flex;
-  gap: 0;
+  gap: 20px;
   width: 100%;
   height: 500px;
   margin-top: 40px;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .ref-style-card {
@@ -438,16 +435,13 @@
   position: relative;
   height: 100%;
   background-color: #ffffff;
-  border-top: none;
-  border-bottom: none;
-  border-left: none;
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 40px;
-  cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
   transition: 
     flex 0.6s cubic-bezier(0.16, 1, 0.3, 1),
@@ -457,7 +451,7 @@
 }
 
 .ref-style-card:last-child {
-  border-right: none;
+  /* removed to keep consistent borders */
 }
 
 /* Expanded Card Hover State in Flex Accordion (Ref Image 5 Sequence) */
@@ -694,8 +688,7 @@
   .ref-accordion-container {
     flex-direction: column;
     height: auto;
-    gap: 0;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    gap: 15px;
   }
 
   .ref-style-card {
@@ -707,12 +700,12 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    border-right: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
   }
 
   .ref-style-card:last-child {
-    border-bottom: none;
+    /* keeping consistent borders */
   }
 
   /* Unhovered Mobile Layout Rules to Prevent Overlaps */
